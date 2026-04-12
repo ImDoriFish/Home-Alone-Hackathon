@@ -1,33 +1,44 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 4f;
 
     private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 movement;
+    private Vector2 lastMove = Vector2.down;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        // Old Pokemon-style: no diagonal movement
-        if (moveX != 0)
+        if (movement.x != 0)
         {
-            moveY = 0;
+            movement.y = 0;
         }
 
-        movement = new Vector2(moveX, moveY).normalized;
+        bool isWalking = movement != Vector2.zero;
+
+        if (isWalking)
+        {
+            lastMove = movement.normalized;
+        }
+
+        animator.SetBool("IsWalking", isWalking);
+        animator.SetFloat("MoveX", lastMove.x);
+        animator.SetFloat("MoveY", lastMove.y);
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement * moveSpeed;
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 }

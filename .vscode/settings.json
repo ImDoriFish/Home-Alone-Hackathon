@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Home-Alone-Hackathon.slnx",
+    "dotnet.defaultSolution": "Home Alone Hackathon.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
