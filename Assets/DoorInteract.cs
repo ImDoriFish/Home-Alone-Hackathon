@@ -3,18 +3,26 @@ using TMPro;
 
 public class DoorInteract : MonoBehaviour
 {
+    public int doorID = 1;
+
     public bool isOpen = true;
     public Collider2D doorBlocker;
     public GameObject statusPanel;
     public TextMeshProUGUI statusText;
 
+    public GameManager gameManager;
+
     private bool playerNearby = false;
 
     void Start()
     {
-        
         UpdateDoor();
         HideStatus();
+
+        if (gameManager != null)
+        {
+            gameManager.SetDoorDone(doorID, !isOpen);
+        }
     }
 
     void Update()
@@ -23,6 +31,12 @@ public class DoorInteract : MonoBehaviour
         {
             isOpen = !isOpen;
             UpdateDoor();
+
+            if (gameManager != null)
+            {
+                gameManager.SetDoorDone(doorID, !isOpen);
+            }
+
             ShowStatus(isOpen ? "Door Unlocked" : "Door Locked");
         }
     }

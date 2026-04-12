@@ -9,12 +9,19 @@ public class LightSwitchInteract : MonoBehaviour
     public GameObject statusPanel;
     public TextMeshProUGUI statusText;
 
+    public GameManager gameManager;
+
     private bool playerNearby = false;
 
     void Start()
     {
         UpdateLights();
         HideStatus();
+
+        if (gameManager != null)
+        {
+            gameManager.SetLightDone(lightsOn);
+        }
     }
 
     void Update()
@@ -23,6 +30,12 @@ public class LightSwitchInteract : MonoBehaviour
         {
             lightsOn = !lightsOn;
             UpdateLights();
+
+            if (gameManager != null)
+            {
+                gameManager.SetLightDone(lightsOn);
+            }
+
             ShowTemporaryStatus(lightsOn ? "Light On" : "Light Off");
         }
     }
@@ -67,7 +80,6 @@ public class LightSwitchInteract : MonoBehaviour
             statusPanel.SetActive(false);
         }
 
-        // optional: after the 2-second result, show the idle prompt again if still nearby
         if (playerNearby)
         {
             Invoke(nameof(ShowIdlePrompt), 0.05f);
