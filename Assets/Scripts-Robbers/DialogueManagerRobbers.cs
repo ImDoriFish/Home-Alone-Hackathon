@@ -47,7 +47,7 @@ public class DialogueManagerRobbers : MonoBehaviour
                 currentLine++;
                 if (currentLine >= lines.Length)
                 {
-                    FindObjectOfType<SceneFader>().FadeTo(nextScene);
+                    SceneManager.LoadScene(nextScene);
                     return;
                 }
                 ShowLine();
