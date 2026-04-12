@@ -598,7 +598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You have stayed safe from the robbers! Congrats!
+  m_text: "You passed Night 1. \nMove on to the next night."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05dae1095544d4aa89291dfe3d0f154a, type: 2}
   m_sharedMaterial: {fileID: -6998337154044986309, guid: 05dae1095544d4aa89291dfe3d0f154a, type: 2}
@@ -607,8 +607,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294623623
-  m_fontColor: {r: 0.5294118, g: 0.75571036, b: 0.98039216, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
