@@ -6,7 +6,7 @@
 ---
 
 ## 🎮 Demo
-[Link to gameplay video]
+ lebaokhanghcm.itch.io 
 
 ---
 
