@@ -68,3 +68,6 @@ scenes including a main menu, a cinematic robber
 
 ## 🌟 What Makes It Unique
 Three Nights at Kevin's is unique because it takes a universally loved childhood movie and turns it into something genuinely useful — a safety education tool disguised as a fun game. No one has tackled home-alone safety for kids this way before, and the fact that we built it in 24 hours with zero prior Unity experience makes it even more special.
+
+<img width="961" height="598" alt="Screenshot 2026-04-26 at 9 01 40 PM" src="https://github.com/user-attachments/assets/57cb2600-5e74-4af7-aeac-7258585e65a5" />
+
